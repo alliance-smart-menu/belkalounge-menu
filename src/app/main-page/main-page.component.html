@@ -1,0 +1,14 @@
+<main id="main-page">
+    <div class="links">
+      <b [ngClass]="languageColor('ru')" (click)="setLanguage('ru')">РУС</b>
+      <b [ngClass]="languageColor('en')" (click)="setLanguage('en')">ENG</b>
+    </div>
+    <div class="animation">
+      <ng-lottie [options]="options" (click)="scroll()"></ng-lottie>
+    </div>
+    <div class="links">
+      <a [routerLink]="['/menu']" routerLinkActive="router-link-active">{{htmlSetting('menu')}}</a>
+      <img class="img-font" [routerLink]="['/']" src="../assets/img/BelkaLounge_FONT.svg" alt="BelkaLoung">
+      <a [routerLink]="['/table']" routerLinkActive="router-link-active">{{htmlSetting('table')}}</a>
+    </div>
+  </main>

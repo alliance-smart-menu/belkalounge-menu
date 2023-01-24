@@ -1,0 +1,205 @@
+#content {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* font-family: 'Kyiv Type'; */
+    font-family: 'Doloman';
+}
+
+/* Секция с Выбором Категории */
+
+
+.content-line {
+    padding: 12px 0px;
+    width: 100%;
+    background-image: url('../../assets/img/Фон-Перегородка.svg');
+    background-position: center;
+}
+
+
+.category-select {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categories {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.category-span {
+    margin: 9px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-span:hover {
+    color: red;
+}
+
+.category-icon {
+    width: 50px;
+}
+
+.category-name {
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+
+/* Секция с Выбором Категории */
+
+
+/* Меню */
+.menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0px 20px 0px;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    text-transform: uppercase;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.cost-span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.title-span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.adult {
+    width: 70px;
+}
+
+.position {
+    margin-top: 5px;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 , h2 , h3,  small {
+    color: white;
+}
+
+h3 {
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 26px;
+    margin: 0;
+    padding: 0;
+}
+
+small {
+    font-size: 18px;
+} 
+
+.add {
+    cursor: pointer;
+}
+
+.add:hover {
+    color: red;
+}
+
+
+
+
+
+
+/* Меню */
+
+
+@media screen and (max-width: 1023px) {
+
+
+    #content {
+        width: 100%;
+    }
+    
+    /* Выбор Категории */
+
+    .category-icon {
+        width: 35px;
+    }
+    
+    .category-name {
+        font-size: 8px;
+    }
+
+    /* Выбор Категории */
+
+    /* Меню */
+
+    .menu {
+        width: 99%;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 99%;
+    }
+ 
+    .adult {
+        width: 50px;
+    }
+
+    h1 {
+        font-size:  16px;
+    }
+    
+    h2 {
+        font-size: 12px;
+    }
+
+    small {
+        font-size: 8px;
+    } 
+
+    .name {
+        max-width: 63%;
+    }
+    /* Меню */
+  
+    
+}

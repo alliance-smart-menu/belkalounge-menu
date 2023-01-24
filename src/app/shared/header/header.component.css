@@ -1,0 +1,30 @@
+.links {
+    margin: auto;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.img-font {
+    width: 50%;
+}
+
+.router-link-active {
+    color: red;
+}
+
+.lang_font {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .links {
+        width: 90%;
+        font-size: 18px;
+    }
+
+}

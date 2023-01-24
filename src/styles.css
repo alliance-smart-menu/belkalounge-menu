@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'Kyiv Type';
+    src: url('./assets/fonts/KyivTypeSans-VarGX.ttf') format('truetype');
+    font-weight: 200;
+/*     font-style: normal;
+    font-display: swap; */
+}
+
+@font-face {
+    font-family: 'Doloman';
+    src: url('./assets/fonts/DolomanPavljenko.ttf') format('truetype');
+    font-weight: light;
+}
+
+body, html {
+    /* font-family: 'Kyiv Type'; */
+    font-family: 'Doloman';
+    background-color: black;
+    color: white;
+}
+
+a {
+    text-decoration-line: none;
+    color: white;
+}
+
+a:hover {
+    color: red;
+}
+
+.red {
+    color: red;
+}
+
+
