@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.checkVersion();
     this.FindSavedSettings();
+    this.menuService.setCost();
     this.getMenu();
   }
 
@@ -39,6 +40,11 @@ export class AppComponent implements OnInit {
     const token = localStorage.getItem("token");
     if (token) {
       this.menuService.token = token
+    }
+
+    const language = localStorage.getItem('language');
+    if (language) {
+      this.menuService.language = language
     }
 
     const category = localStorage.getItem('category');

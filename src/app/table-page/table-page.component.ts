@@ -18,6 +18,31 @@ export class TablePageComponent implements OnInit  {
   error: string | undefined
   message: string | undefined
 
+  html: any = {
+    ru: {
+      enter_code: "Введите код активации",
+      activate_button: "Активировать",
+      order: "Заказ",
+      send: "Отправить",
+      officiant: "Официант",
+      hookah: "Кальянщик",
+      cash: "Наличные",
+      card: "Картой",
+      payment: "К оплате"
+    },
+    en: {
+      enter_code: "Enter activation code",
+      activate_button: "Activate",
+      order: "Order",
+      send: "Send",
+      officiant: "Officiant",
+      hookah: "Hookah",
+      cash: "Cash",
+      card: "Card",
+      payment: "To Payment"
+    }
+  }
+
   constructor(
     public tableService: TableService,
     public menuService: MenuService
@@ -162,7 +187,16 @@ export class TablePageComponent implements OnInit  {
       }
     )
   }
+  
+  htmlSetting(tag: string) {
 
+    if (this.menuService.language == "ru") {
+      return this.html.ru[tag]
+    } else {
+      return this.html.en[tag]
+    }
+
+  }
 
 
 }

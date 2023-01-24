@@ -5,15 +5,15 @@
     <br><br><br>
     <div class="input-container">
         <input type="text" required="" [disabled]="pennding" [(ngModel)]="code" />
-        <label>Введите код активации</label>
+        <label>{{htmlSetting('enter_code')}}</label>
     </div>
     <br><br>
     <button [disabled]="pennding || !code || code.length !== 4" class="button-6" role="button"
-        (click)="activate()">Активировать</button>
+        (click)="activate()">{{htmlSetting('activate_button')}}</button>
 </section>
 <section *ngIf="tableService.table" class="entered">
 
-    <h3 *ngIf="tableService.order.length > 0">Заказ:</h3>
+    <h3 *ngIf="tableService.order.length > 0">{{htmlSetting('order')}}:</h3>
 
     <table class="GeneratedTable" *ngIf="tableService.order.length > 0">
       <tbody>
@@ -40,15 +40,15 @@
    
     <ng-container  *ngIf="tableService.order.length > 0">
         <br><br>
-        <button [disabled]="pennding"  class="button-6" role="button" (click)="order()">Отправить</button>
+        <button [disabled]="pennding"  class="button-6" role="button" (click)="order()">{{htmlSetting('send')}}</button>
         &nbsp;&nbsp;
         <div class="content-line"> </div>
         &nbsp;&nbsp;
     </ng-container>
   
-    <button [disabled]="pennding"  class="button-6" role="button" (click)="call()">Официант!</button>
+    <button [disabled]="pennding"  class="button-6" role="button" (click)="call()">{{htmlSetting('officiant')}}!</button>
     &nbsp;&nbsp;
-    <button [disabled]="pennding"  class="button-6" role="button" (click)="hookah()">Кальянщик!</button>
+    <button [disabled]="pennding"  class="button-6" role="button" (click)="hookah()">{{htmlSetting('hookah')}}!</button>
     &nbsp;&nbsp;
     <div class="content-line"> </div>
     &nbsp;&nbsp;
@@ -56,17 +56,17 @@
         <label>
             <input type="radio" name="dark" class="radio" [(ngModel)]="tableService.table.payment" value="Наличные">
             <span class="design"></span>
-            <span class="text">Наличные</span>
+            <span class="text">{{htmlSetting('cash')}}</span>
           </label>
         
           <label>
             <input type="radio" name="dark" class="radio"  [(ngModel)]="tableService.table.payment" value="Картой">
             <span class="design"></span>
-            <span class="text">Картой</span>
+            <span class="text">{{htmlSetting('card')}}</span>
           </label>
     </span>
     &nbsp;&nbsp;
-    <button [disabled]="pennding" class="button-6" role="button" (click)="check()">К оплате</button>
+    <button [disabled]="pennding" class="button-6" role="button" (click)="check()">{{htmlSetting('payment')}}</button>
 
   
 </section>

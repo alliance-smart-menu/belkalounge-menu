@@ -27,6 +27,14 @@ export class MenuService {
   public menu: any
 
 
+  setCost() {
+    if (this.language == 'ru') {
+      this.cost = "Лей"
+    } else {
+      this.cost = "MDL"
+    }
+  }
+
   mapCategories() {
 
     this.categories = this.main_categories!.map((item) => {

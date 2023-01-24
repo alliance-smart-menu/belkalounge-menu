@@ -57,18 +57,11 @@ export class MainPageComponent implements OnInit {
     this.menuService.language = lang
     localStorage.setItem('language', lang);
 
-    this.setCost();
+    this.menuService.setCost();
     this.menuService.mapCategories();
     this.menuService.setMenu();
   }
 
-  setCost() {
-    if (this.menuService.language == 'ru') {
-      this.menuService.cost = "Лей"
-    } else {
-      this.menuService.cost = "MDL"
-    }
-  }
 
   languageColor(lang: string) {
     return this.menuService.language === lang ? 'lang_font red' : 'lang_font'
