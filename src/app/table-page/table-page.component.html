@@ -1,6 +1,8 @@
 <app-header></app-header>
+
 <div class="content-line"> </div>
-<section *ngIf="!tableService.table" class="un-enetered">
+
+<section *ngIf="!tableService.table && !tableService.loading" class="un-enetered">
     <label *ngIf="error" class="error">{{error}}</label>
     <br><br><br>
     <div class="input-container">
@@ -11,7 +13,8 @@
     <button [disabled]="pennding || !code || code.length !== 4" class="button-6" role="button"
         (click)="activate()">{{htmlSetting('activate_button')}}</button>
 </section>
-<section *ngIf="tableService.table" class="entered">
+
+<section *ngIf="tableService.table && !tableService.loading" class="entered">
 
     <h3 *ngIf="tableService.order.length > 0">{{htmlSetting('order')}}:</h3>
 
@@ -70,3 +73,5 @@
 
   
 </section>
+
+<div *ngIf="tableService.loading"  class="lds-ring"><div></div><div></div><div></div><div></div></div>

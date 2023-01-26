@@ -3,8 +3,8 @@
   
     <!-- Выбор Категории -->
 
-    <div  *ngIf="menuService.categories" class="content-line"> </div>
-    <div #categories id="categories" *ngIf="menuService.categories"  class="category-select">
+    <div  *ngIf="menuService.categories && !menuService.category_loading" class="content-line"> </div>
+    <div #categories id="categories" *ngIf="menuService.categories && !menuService.category_loading"  class="category-select">
 
         <div class="categories">
             <span *ngFor="let category of menuService.categories" (click)="setCategory(category)" class="category-span" >
@@ -14,11 +14,12 @@
         </div>
 
     </div>
-    <div *ngIf="menuService.categories" class="content-line"> </div>
+    <div *ngIf="menuService.categories && !menuService.category_loading" class="content-line"> </div>
 
     <!-- Выбор Категории -->
 
-    <div *ngIf="menuService.menu" class="menu" [ngStyle]="{'background-image': 'url(' + menuService.background + ')'}" >
+    <!-- Меню -->
+    <div *ngIf="menuService.menu && !menuService.menu_loading && !menuService.category_loading" class="menu" [ngStyle]="{'background-image': 'url(' + menuService.background + ')'}" >
 
 
         <div *ngFor="let sub_category of menuService.menu" class="column">
@@ -57,6 +58,9 @@
         </div>
 
     </div>
+    <!-- Меню -->
+
+    <div *ngIf="menuService.menu_loading || menuService.category_loading"  class="lds-ring"><div></div><div></div><div></div><div></div></div>
 
 
 </section>

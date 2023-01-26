@@ -12,7 +12,9 @@ export class MenuService {
 
   public token: string | undefined
 
-  public loading: boolean = false
+  public category_loading: boolean = false
+  public menu_loading: boolean = false
+
 
   public language: string = "ru"
   public cost: string = "Лей"
@@ -37,6 +39,8 @@ export class MenuService {
 
   mapCategories() {
 
+    this.category_loading = true
+
     this.categories = this.main_categories!.map((item) => {
 
       let category: any = {
@@ -60,11 +64,17 @@ export class MenuService {
       }
     }
 
+    setTimeout(() => {
+      this.category_loading = false
+    }, 1400);
+
   }
 
   setMenu() {
-    this.loading = true
+    this.menu_loading = true
+
     const obj = this.main_menu!.find(item => item.category === this.category);
+
     this.menu = obj.sub_categories.map((item: any) => {
       let sub_category: any = {
         adult: item.adult,
@@ -100,8 +110,8 @@ export class MenuService {
     })
 
     setTimeout(() => {
-      this.loading = false
-    }, 500);
+      this.menu_loading = false
+    }, 1000);
 
   }
 

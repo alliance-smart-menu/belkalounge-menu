@@ -9,6 +9,8 @@ import { MenuService } from './menu.service';
 })
 export class TableService {
 
+  public loading: boolean = false
+
   public table: any
 
   order: any[] = []
@@ -70,7 +72,7 @@ export class TableService {
 
   // API запросы
   activateTable(code: string, token: string): Observable<any> {
-    return this.http.post<any>(`${environment.apiURL}/api/telegram/code`, {code, token})
+    return this.http.post<any>(`${environment.apiURL}/api/telegram/code`, {code, token, place: "BelkaLounge"})
   }
 
   call(data: any): Observable<any> {

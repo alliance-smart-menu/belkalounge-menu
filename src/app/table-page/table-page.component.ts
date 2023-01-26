@@ -85,7 +85,7 @@ export class TablePageComponent implements OnInit  {
         this.message = data[this.menuService.language]
         setTimeout(() => {
           this.message = undefined
-        }, 5000);
+        }, 3000);
 
         this.pennding = false
 
@@ -95,7 +95,7 @@ export class TablePageComponent implements OnInit  {
         setTimeout(() => {
           this.message = undefined
           this.tableService.clear()
-        }, 5000);
+        }, 3000);
         this.pennding = false
       }
     )
@@ -112,7 +112,7 @@ export class TablePageComponent implements OnInit  {
         this.message = data[this.menuService.language]
         setTimeout(() => {
           this.message = undefined
-        }, 5000);
+        }, 3000);
 
         this.pennding = false
 
@@ -122,7 +122,7 @@ export class TablePageComponent implements OnInit  {
         setTimeout(() => {
           this.message = undefined
           this.tableService.clear()
-        }, 5000);
+        }, 3000);
         this.pennding = false
       }
     )
@@ -138,7 +138,7 @@ export class TablePageComponent implements OnInit  {
         this.message = data[this.menuService.language]
         setTimeout(() => {
           this.message = undefined
-        }, 5000);
+        }, 3000);
 
         this.pennding = false
 
@@ -148,7 +148,7 @@ export class TablePageComponent implements OnInit  {
         setTimeout(() => {
           this.message = undefined
           this.tableService.clear()
-        }, 5000);
+        }, 3000);
         this.pennding = false
       }
     )
@@ -174,7 +174,7 @@ export class TablePageComponent implements OnInit  {
         this.message = data[this.menuService.language]
         setTimeout(() => {
           this.message = undefined
-        }, 5000);
+        }, 3000);
 
         this.pennding = false
 
@@ -184,7 +184,7 @@ export class TablePageComponent implements OnInit  {
         setTimeout(() => {
           this.message = undefined
           this.tableService.clear()
-        }, 5000);
+        }, 3000);
         this.pennding = false
       }
     )

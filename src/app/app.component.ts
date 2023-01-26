@@ -65,10 +65,8 @@ export class AppComponent implements OnInit {
     this.menuService.get().subscribe(
       (data) => {
         this.menuService.main_categories = data.categories
-        localStorage.setItem("main_categoris", JSON.stringify(data.categories))
         this.menuService.mapCategories();
         this.menuService.main_menu = data.menu
-        localStorage.setItem("main_menu", JSON.stringify(data.menu))
         this.menuService.setMenu();
         if (data.token) {
           localStorage.setItem("token", data.token);
@@ -89,14 +87,21 @@ export class AppComponent implements OnInit {
   checkCode() {
     const code = localStorage.getItem("code")
     if (code) {
+
+      this.tableService.loading = true
+
       this.tableService.activateTable(code, this.menuService.token!).subscribe(
         data => {
           this.tableService.table = data
+          setTimeout(() => {
+            this.tableService.loading = false
+          }, 1000);
         },
         error => {
           localStorage.removeItem("code")
           console.warn(error)
         }
+
       )
     }
   }
