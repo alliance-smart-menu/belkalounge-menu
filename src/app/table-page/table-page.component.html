@@ -18,14 +18,14 @@
     <table class="GeneratedTable" *ngIf="tableService.order.length > 0">
       <tbody>
         <tr *ngFor="let position of tableService.order; let i = index">
-          <td (click)="tableService.remove(i)">✘</td>
-          <td class="position-name">{{position.name}}</td>
+          <td style="cursor: pointer;" (click)="tableService.remove(i)">✘</td>
+          <td class="position-name">{{position.name[this.menuService.language]}}</td>
           <td>
-            <b (click)="tableService.changeQuantity(i, '-')">﹣</b>
+            <b  style="cursor: pointer;"  (click)="tableService.changeQuantity(i, '-')">﹣</b>
             &nbsp;
-            {{position.quantity}} шт
+            {{position.quantity}} {{htmlSetting('pcs')}}
             &nbsp;
-            <b (click)="tableService.changeQuantity(i, '+')">＋</b>
+            <b  style="cursor: pointer;"  (click)="tableService.changeQuantity(i, '+')">＋</b>
            </td>
         </tr>
       </tbody>

@@ -42,12 +42,8 @@ export class MenuService {
       let category: any = {
         _id: item._id,
         background: item.background,
-        image: item.image
-      }
-      if (this.language === 'ru') {
-        category.name = item.name.ru
-      } else {
-        category.name = item.name.en
+        image: item.image,
+        name: item.name
       }
 
       return category
@@ -72,12 +68,7 @@ export class MenuService {
     this.menu = obj.sub_categories.map((item: any) => {
       let sub_category: any = {
         adult: item.adult,
-      }
-
-      if (this.language === 'ru') {
-        sub_category.name = item.name.ru
-      } else {
-        sub_category.name = item.name.en
+        name: item.name
       }
 
       sub_category.positions = item.positions.map((data: any) => {
@@ -85,32 +76,21 @@ export class MenuService {
         let position: any = {
           _id: data._id,
           access: data.access,
-          cost: data.cost ? data.cost : undefined
+          cost: data.cost ? data.cost : undefined,
+          new_cost: data.new_cost ? data.new_cost : undefined,
+          name: data.name,
         }
 
-        if (this.language === 'ru') {
-          position.name = data.name.ru
 
-          if (data.description) {
-            position.description = data.description.ru
-          }
-
-          if (data.sub_name) {
-            position.sub_name = data.sub_name.ru
-          }
-
-        } else {
-          position.name = data.name.en
-
-          if (data.description) {
-            position.description = data.description.en
-          }
-
-          if (data.sub_name) {
-            position.sub_name = data.sub_name.en
-          }
-
+        if (data.description) {
+          position.description = data.description
         }
+
+        if (data.sub_name) {
+          position.sub_name = data.sub_name
+        }
+
+
 
         return position
 

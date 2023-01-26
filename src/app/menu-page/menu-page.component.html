@@ -9,7 +9,7 @@
         <div class="categories">
             <span *ngFor="let category of menuService.categories" (click)="setCategory(category)" class="category-span" >
                 <img class="category-icon" [src]="category.image" [alt]="category.name">
-                <b [ngClass]="categoryColor(category._id)" [innerHTML]="category.name"></b>
+                <b [ngClass]="categoryColor(category._id)" [innerHTML]="category.name[this.menuService.language]"></b>
             </span>
         </div>
 
@@ -26,7 +26,7 @@
             <span class="title-span">
                 <img  *ngIf="sub_category.adult" class="adult" src="../../assets/img/18+.svg" alt="18+">
                 &nbsp;&nbsp;
-                <h1>{{sub_category.name}}</h1>
+                <h1>{{sub_category.name[this.menuService.language]}}</h1>
                 &nbsp;
                 &nbsp;&nbsp;
             </span>
@@ -35,11 +35,16 @@
                 <br> 
                 <span class="position">
                     <span class="name">
-                        <h2>{{position.name}} <small> &nbsp; {{position.sub_name}}</small> </h2>
-                        <small class="description">{{position.description}}</small>
+                        <h2>{{position.name[this.menuService.language]}} <small> &nbsp; {{position.sub_name[this.menuService.language]}}</small> </h2>
+                        <small class="description">{{position.description[this.menuService.language]}}</small>
                     </span>
                     <span class="cost-span">
-                        <h2  *ngIf="position.cost" [ngClass]="{delete: position.action}"> {{position.cost}} {{menuService.cost}}</h2>
+                        <h2  class="new-cost" *ngIf="position.new_cost">{{position.new_cost}}</h2>
+                        <div *ngIf="position.cost" class="main-cost" > 
+                            <h2 [ngClass]="{'delete': position.new_cost}"> {{position.cost}} </h2> 
+                            &nbsp;&nbsp; 
+                            <h2> {{menuService.cost}}</h2>
+                        </div>
                         <b class="add" *ngIf="position.access && tableService.table && !position.added" (click)="tableService.orderAdd(position)">✚</b>
                         <b class="added" *ngIf="position.added">✓</b>
                     </span>

@@ -28,7 +28,8 @@ export class TablePageComponent implements OnInit  {
       hookah: "Кальянщик",
       cash: "Наличные",
       card: "Картой",
-      payment: "К оплате"
+      payment: "К оплате",
+      pcs: "шт."
     },
     en: {
       enter_code: "Enter activation code",
@@ -39,7 +40,8 @@ export class TablePageComponent implements OnInit  {
       hookah: "Hookah",
       cash: "Cash",
       card: "Card",
-      payment: "To Payment"
+      payment: "To Payment",
+      pcs: "pcs"
     }
   }
 
@@ -62,7 +64,7 @@ export class TablePageComponent implements OnInit  {
       },
       error => {
         console.warn(error)
-        this.error = error.error
+        this.error = error.error[this.menuService.language]
         setTimeout(() => {
           this.error = undefined
           this.code = undefined
@@ -80,7 +82,7 @@ export class TablePageComponent implements OnInit  {
     this.tableService.call(this.tableService.table).subscribe(
       data => {
 
-        this.message = data
+        this.message = data[this.menuService.language]
         setTimeout(() => {
           this.message = undefined
         }, 5000);
@@ -89,7 +91,7 @@ export class TablePageComponent implements OnInit  {
 
       },
       error => {
-        this.message = error.error
+        this.message = error.error[this.menuService.language]
         setTimeout(() => {
           this.message = undefined
           this.tableService.clear()
@@ -107,7 +109,7 @@ export class TablePageComponent implements OnInit  {
     this.tableService.check(this.tableService.table).subscribe(
       data => {
 
-        this.message = data
+        this.message = data[this.menuService.language]
         setTimeout(() => {
           this.message = undefined
         }, 5000);
@@ -116,7 +118,7 @@ export class TablePageComponent implements OnInit  {
 
       },
       error => {
-        this.message = error.error
+        this.message = error.error[this.menuService.language]
         setTimeout(() => {
           this.message = undefined
           this.tableService.clear()
@@ -133,7 +135,7 @@ export class TablePageComponent implements OnInit  {
     this.tableService.hookah(this.tableService.table).subscribe(
       data => {
 
-        this.message = data
+        this.message = data[this.menuService.language]
         setTimeout(() => {
           this.message = undefined
         }, 5000);
@@ -142,7 +144,7 @@ export class TablePageComponent implements OnInit  {
 
       },
       error => {
-        this.message = error.error
+        this.message = error.error[this.menuService.language]
         setTimeout(() => {
           this.message = undefined
           this.tableService.clear()
@@ -169,7 +171,7 @@ export class TablePageComponent implements OnInit  {
 
         this.tableService.order = []
 
-        this.message = data
+        this.message = data[this.menuService.language]
         setTimeout(() => {
           this.message = undefined
         }, 5000);
@@ -178,7 +180,7 @@ export class TablePageComponent implements OnInit  {
 
       },
       error => {
-        this.message = error.error
+        this.message = error.error[this.menuService.language]
         setTimeout(() => {
           this.message = undefined
           this.tableService.clear()
