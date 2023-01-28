@@ -99,6 +99,7 @@ export class AppComponent implements OnInit {
         },
         error => {
           localStorage.removeItem("code")
+          this.tableService.loading = false
           console.warn(error)
         }
 
