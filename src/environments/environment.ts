@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL: ""
+  apiURL: "https://smart-menu-server.herokuapp.com"
 };
 
 // http://localhost:3000

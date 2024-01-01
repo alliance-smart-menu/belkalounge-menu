@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { MenuService } from './services/menu.service';
 import { TableService } from './services/table.service';
+import { SeasonService } from './services/season.service';
 
 
 @Component({
@@ -15,7 +16,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private menuService: MenuService,
-    private tableService: TableService
+    private tableService: TableService,
+    private seasonService: SeasonService
   ) { }
 
   ngOnInit(): void {
@@ -23,6 +25,7 @@ export class AppComponent implements OnInit {
     this.FindSavedSettings();
     this.menuService.setCost();
     this.getMenu();
+    this.seasonService.checkSeason();
   }
 
   checkVersion() {

@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit,  } from '@angular/core';
 import { MenuService } from '../services/menu.service';
 import { TableService } from '../services/table.service';
+import { SeasonService } from '../services/season.service';
 
 @Component({
   selector: 'app-menu-page',
@@ -12,15 +13,19 @@ export class MenuPageComponent implements OnInit, AfterViewInit {
   loading: boolean = false
   reloading: boolean = false
 
-
+  line =  '../../assets/img/default-line.svg';
   menu: any
 
   constructor(
     public menuService: MenuService,
-    public tableService: TableService
+    public tableService: TableService,
+    private seasonService: SeasonService
   ) { }
 
   ngOnInit(): void {
+    if (this.seasonService.season === "winter") {
+     this.line = '../../assets/img/new-year-line.svg'
+    }
   }
 
   ngAfterViewInit(): void {

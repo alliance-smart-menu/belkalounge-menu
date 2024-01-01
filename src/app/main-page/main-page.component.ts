@@ -2,6 +2,7 @@ import { Component, OnInit , HostListener} from '@angular/core';
 import { AnimationOptions } from 'ngx-lottie';
 
 import { MenuService } from '../services/menu.service';
+import { SeasonService } from '../services/season.service';
 
 @Component({
   selector: 'app-main-page',
@@ -18,9 +19,7 @@ export class MainPageComponent implements OnInit {
   }
 
 
-  options: AnimationOptions = {
-    path: '/assets/animation/default_main.json',
-  };
+  options: any
 
   html: any = {
     ru: {
@@ -34,11 +33,23 @@ export class MainPageComponent implements OnInit {
   }
 
   constructor (
-    public menuService: MenuService
-  ) {}
+    public menuService: MenuService,
+    private seasonService: SeasonService
+  ) {
+    
+  }
 
   ngOnInit(): void {
     this.windowHeigth();
+    if (this.seasonService.season === "winter") {
+      this.options = {
+        path: '/assets/animation/new_year_main.json'
+      }
+    } else {
+      this.options = {
+        path: '/assets/animation/default_main.json'
+      }
+    }
   }
 
   windowHeigth() {

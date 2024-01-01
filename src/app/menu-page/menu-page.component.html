@@ -3,7 +3,10 @@
   
     <!-- Выбор Категории -->
 
-    <div  *ngIf="menuService.categories && !menuService.category_loading" class="content-line"> </div>
+    <div  
+    *ngIf="menuService.categories && !menuService.category_loading" 
+    [ngStyle]="{'background-image': 'url(' + line + ')', 'background-position': 'center'}"
+    class="content-line"> </div>
     <div #categories id="categories" *ngIf="menuService.categories && !menuService.category_loading"  class="category-select">
 
         <div class="categories">
@@ -14,7 +17,10 @@
         </div>
 
     </div>
-    <div *ngIf="menuService.categories && !menuService.category_loading" class="content-line"> </div>
+    <div 
+    *ngIf="menuService.categories && !menuService.category_loading" 
+    [ngStyle]="{'background-image': 'url(' + line + ')', 'background-position': 'center'}"
+    class="content-line"> </div>
 
     <!-- Выбор Категории -->
 
