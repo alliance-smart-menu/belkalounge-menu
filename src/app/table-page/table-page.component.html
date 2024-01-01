@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<div class="content-line"> </div>
+<div [ngStyle]="{'background-image': 'url(' + line + ')', 'background-position': 'center'}" class="content-line"> </div>
 
 <section *ngIf="!tableService.table && !tableService.loading" class="un-enetered">
     <label *ngIf="error" class="error">{{error}}</label>

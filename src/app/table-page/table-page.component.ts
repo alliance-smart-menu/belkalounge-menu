@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { TableService } from '../services/table.service';
 import { MenuService } from '../services/menu.service';
 import { StorageService } from '../services/storage.service';
+import { SeasonService } from '../services/season.service';
 
 @Component({
   selector: 'app-table-page',
@@ -17,6 +18,8 @@ export class TablePageComponent implements OnInit  {
 
   error: string | undefined
   message: string | undefined
+
+  line =  '../../assets/img/default-line.svg';
 
   html: any = {
     ru: {
@@ -47,10 +50,14 @@ export class TablePageComponent implements OnInit  {
 
   constructor(
     public tableService: TableService,
-    public menuService: MenuService
+    public menuService: MenuService,
+    public seasonService: SeasonService
   ) {}
 
   ngOnInit(): void {
+    if (this.seasonService.season === "winter") {
+      this.line = '../../assets/img/new-year-line.svg'
+     }
   }
 
   activate() {
